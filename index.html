@@ -34,3 +34,4 @@ $('import').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const 
 if(window.L){map=L.map('map').setView([31,30],2);L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:18}).addTo(map);names.forEach(c=>L.circleMarker(coords[c],{radius:10,color:'#6ee5df',fillColor:'#2bb4c0',fillOpacity:.78,weight:2}).addTo(map).bindTooltip(`${c} · ${owners.filter(o=>o.country===c).length}家`).on('click',()=>setCountry(c)))}else{$('map').innerHTML='<p style="padding:30px">地图需要联网加载，船东搜索和档案仍可使用。</p>'}
 renderCountries();renderList();current=owners[0];renderProfile();
 </script></body></html>
+
